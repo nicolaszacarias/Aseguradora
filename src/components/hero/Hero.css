@@ -1,12 +1,18 @@
-/* .h-container{
-    display: flex;align-items: center;
-    justify-content: center;
-} */
+ /* .hero-container{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    object-fit: contain;
+    background: url("../../../public/contact.jpg") ;
+}  */
+
 .hero-wrapper{
     color: white;
     position: relative;
     padding-bottom: 2rem;
-    /* background-color: var(--black);  */
+     background-color: var(--black);  
 }
 /* .hero-des{
     /* color: black; 
@@ -39,19 +45,25 @@
     z-index: -1;
 }
 /* right side */
-
+.img-pichu{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+}
 .image-container{
     width: 30rem;
     height: 35rem;
     overflow: hidden;
     border-radius: 15rem 15rem 0 0;
-    border: 8px solid rgba(255, 255, 255, 0.12);
+    border: 8px solid rgb(255, 255, 255);
 }
 
 .image-container>img{
     width: 150%;
     height: 100%;
-}
+} 
 
 @media (max-width: 640px) {
     .hero-container{

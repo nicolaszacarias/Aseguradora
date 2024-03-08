@@ -1,0 +1,23 @@
+.cards{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.card{
+flex: 0 0 calc(33.33% - 20px);
+max-width: calc(33.33% - 20px);
+width: 100%;
+background: #fff;
+border-radius: 10px;
+padding: 20px;
+margin-bottom: 20px;
+transition: .3s;
+border: 2px solid transparent;
+}
+.card:hover{
+    border-color: var(--green);
+}
+.pichu{
+    color: var(--green);
+}

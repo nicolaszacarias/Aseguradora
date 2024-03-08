@@ -1,23 +1,18 @@
-import Header from "./components/header/Header";
-import Hero from "./components/hero/Hero";
 import "./App.css";
-import Value from "./components/value/Value";
-import Contact from "./components/contact/Contact";
-import GetStarted from "./components/GetStarted/GetStarted";
-import Footer from "./components/Footer/Footer";
+import Layout from "./components/Layout/Layout";
+import Secures from "./components/Secures/Secures";
+import Website from "./pages/Website";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <div>
-        <div className="white-gradient"/>
-      <Header/>
-      <Hero/>
-      </div>
-      <Value/>
-      <Contact/>
-      <GetStarted/>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route element={<Layout/>}>
+    <Route path="/" element={<Website/>}/>
+    <Route path="/Seguros" element={<Secures/>}/>
+    </Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 

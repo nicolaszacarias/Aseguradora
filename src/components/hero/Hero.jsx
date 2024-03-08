@@ -13,7 +13,7 @@ import "./Hero.css"
                         </h1>
                     </div>
                     <div className="hero-des flexColStart">
-                        <span className="secondaryText">Descubri lo que mas te conviene para tu auto facilmente!</span>
+                        <span className="secondaryText">Protege lo que más importa con nuestros seguros a medida.</span>
                         <span className="secondaryText">Olvidate de todas las dificultades de encontrar un seguro para vos</span>
                     </div>
                     <a className="button" href="https://www.clientes.polko.com.ar/MjQ5OjE3MDg=">
@@ -31,6 +31,17 @@ import "./Hero.css"
             </div>
 
          </section>
+        // <div className="hero-container">
+        //     {/* <img src="contact.jpg" alt="" /> */}
+        //     <h1>Descubri tu mejor seguro</h1>
+        //     <p>Que estas esperando?</p>
+        //     <div>
+        //     <a className="button" href="https://www.clientes.polko.com.ar/MjQ5OjE3MDg=">
+        //                  Cotiza Ya!
+        //                  </a>
+        //     </div>
+
+        // </div>
      )
  }
 

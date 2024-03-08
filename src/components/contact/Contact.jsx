@@ -12,25 +12,27 @@ const Contact = () => {
           <span className="orangeText">Nuestro Contacto</span>
           <span className="primaryText">Al alcance de tu mano</span>
           <span className="secondaryText">
-            Estamos siempre preparados para provicionarte nuestro mejor servicio. Creemos
-            que dandole la seguridad a la persona se vive mejor{" "}
+          Siempre estamos preparados para proporcionarte nuestro mejor servicio. 
+          Creemos que al brindar seguridad a las personas, se vive mejor.{" "}
           </span>
 
           <div className="flexColStart contactModes">
             {/* first row */}
             <div className="flexStart row">
               <div className="flexColCenter mode">
-                <div className="flexStart">
-                  <div className="flexCenter icon">
+                  <div className="flexStart">
+                   <div className="flexCenter icon">
                     <MdCall size={25} />
-                  </div>
-                  <div className="flexColStart detail">
-                    <span className="primaryText">Call</span>
-                    <span className="secondaryText">021 123 145 14</span>
-                  </div>
-                </div>
-                <div className="flexCenter button">Call now</div>
-              </div>
+                  </div> 
+                   <div className="flexColStart detail">
+                     <span className="primaryText">Llamar</span>
+                    <span className="secondaryText">3515214529</span> 
+                  </div> 
+                </div> 
+                <a href="tel:+543515214529">
+                 <div className="flexCenter button">Llamar ahora</div> 
+                 </a>
+              </div> 
 
               <div className="flexColCenter mode">
                 <div className="flexStart">
@@ -38,17 +40,20 @@ const Contact = () => {
                     <BsFillChatDotsFill size={25} />
                   </div>
                   <div className="flexColStart detail">
-                    <span className="primaryText">Chat</span>
-                    <span className="secondaryText">021 123 145 14</span>
+                    <span className="primaryText">Whatsapp</span>
+                    <span className="secondaryText">3515214529</span>
                   </div>
                 </div>
+                {/* <button>RECORDATORIO BOTON WHATSAPP</button> */}
+                <a href="https://wa.link/nkwio8">
                 <div className="flexCenter button">Chat now</div>
+                </a>
               </div>
             </div>
 
             {/* second row */}
             <div className="flexStart row">
-              <div className="flexColCenter mode">
+              {/* <div className="flexColCenter mode">
                 <div className="flexStart">
                   <div className="flexCenter icon">
                     <BsFillChatDotsFill size={25} />
@@ -59,7 +64,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="flexCenter button">Video Call now</div>
-              </div>
+              </div> */}
 
               <div className="flexColCenter mode">
                 <div className="flexStart">
@@ -67,11 +72,13 @@ const Contact = () => {
                     <HiChatBubbleBottomCenter size={25} />
                   </div>
                   <div className="flexColStart detail">
-                    <span className="primaryText">Message</span>
-                    <span className="secondaryText">021 123 145 14</span>
+                    <span className="primaryText">Email</span>
+                    <span className="secondaryText">info@asegurarnet.com.ar</span>
                   </div>
                 </div>
+                <a href="mailto:info@asegurarnet.com.ar">
                 <div className="flexCenter button">Message now</div>
+                </a>
               </div>
             </div>
           </div>
@@ -80,7 +87,7 @@ const Contact = () => {
         {/* right side */}
         <div className="flexEnd c-right">
           <div className="image-container">
-            <img src="./contact.jpg" alt="" />
+            <img src="./contacto10.jpg" alt="" />
           </div>
         </div>
       </div>

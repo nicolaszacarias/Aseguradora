@@ -3,21 +3,21 @@ import { MdCancel, MdAnalytics } from "react-icons/md";
 const data = [
   {
     icon: <HiShieldCheck/>,
-    heading: "Asistencia Vehicular",
+    heading: "Comodidad y conveniencia",
     detail:
-      "Estamos las 24hs dispuestos a darte el mejor servicio y la mejor atencion para tu auto en cualquier horario",
+      "La principal ventaja es la comodidad de poder contratar un seguro desde cualquier lugar y en cualquier momento, sin necesidad de desplazarse físicamente a una sucursal o agencia.",
   },
   {
     icon: <MdCancel />,
-    heading: "Gestion online",
+    heading: "Ahorro de tiempo",
     detail:
-      "Podes gestionar todo desde tu casa via online sin tener que moverte y tener los resultados en un instante",
+      " Evita largas esperas y trámites burocráticos al poder completar el proceso de contratación en línea de manera rápida y eficiente.",
   },
   {
     icon: <MdAnalytics />,
-    heading: "Cotiza Ahora!",
+    heading: "Facilidad para realizar modificaciones",
     detail:
-      "Con la facilidad de cotizar tu auto y tener el mejor seguro siempre desde tu casa Ya!",
+      "Una vez contratado el seguro, es posible realizar modificaciones o actualizaciones en línea, como cambios en la cobertura o en los datos del asegurado, sin necesidad de visitar una sucursal física.",
   },
 ];
 export default data;
