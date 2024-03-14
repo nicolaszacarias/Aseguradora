@@ -21,4 +21,8 @@
     .f-right{
         justify-content: center;
     }
-}
+    .img-derecha {
+        float: right; /* Alinea la imagen a la derecha */
+        margin-left: 10px; /* Ajusta el margen izquierdo para separar la imagen del texto */
+      }
+}   

@@ -29,7 +29,7 @@ const Contact = () => {
                     <span className="secondaryText">3515214529</span> 
                   </div> 
                 </div> 
-                <a href="tel:+543515214529">
+                <a href="tel:+543515214529" className="modex">
                  <div className="flexCenter button">Llamar ahora</div> 
                  </a>
               </div> 

@@ -1,34 +1,49 @@
- /* .hero-container{
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    object-fit: contain;
-    background: url("../../../public/contact.jpg") ;
-}  */
 
-.hero-wrapper{
+/* .hero-wrapper{
     color: white;
     position: relative;
     padding-bottom: 2rem;
-     background-color: var(--black);  
+    background-image: url("../../../public/contact.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+} */
+.hero-wrapper {
+    color: white;
+    position: relative;
+    padding-bottom: 2rem;
+    background-image: url("../../../public/contact.jpg"); /* Reemplaza 'tu_imagen.jpg' con la ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
 }
+
+
+
 /* .hero-des{
     /* color: black; 
 } */
-.hero-container{
-    justify-content: space-around;
-    align-items: flex-end;
+.hero-container {
+    display: flex;
+    justify-content: flex-start !important; /* Alinea el contenido hacia la izquierda */
+    align-items: center;
 }
-.hero-left{
+.hero-left {
+    text-align: left; /* Alinea el texto a la izquierda */
     gap: 3rem;
+    margin-left: 20px; /* Ajusta el margen izquierdo según sea necesario */
 }
 .hero-title{
     position: relative;
     z-index: 1;
     /* color: black; */
 }
+.herostar {
+    margin-left: 10%; /* Ajusta el margen izquierdo según sea necesario */
+    text-align: left; /* Alinea el texto a la izquierda */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 .hero-title>h1{
     font-weight: 600;
     font-size: 3.8rem;
@@ -45,13 +60,13 @@
     z-index: -1;
 }
 /* right side */
-.img-pichu{
+/* .img-pichu{
     object-fit: cover;
     width: 100%;
     height: 100%;
     position: fixed;
     z-index: -1;
-}
+} */
 .image-container{
     width: 30rem;
     height: 35rem;
@@ -65,9 +80,10 @@
     height: 100%;
 } 
 
+
 @media (max-width: 640px) {
     .hero-container{
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
     .hero-title>h1{
         font-size: 2.5rem;
@@ -76,6 +92,14 @@
     .image-container{
         width: 95%;
         height: 25rem;
+    }
+    .white-text {
+        color: black;
+        font-weight: 600;
+        backdrop-filter: blur(5px); /* Agrega un efecto de desenfoque al fondo */
+        background-color: rgba(255, 255, 255, 0.5); /* Establece un fondo blanco semitransparente */
+        padding: 1rem; /* Añade un poco de espacio para mejorar la legibilidad */
+         /* Cambia el color del texto a blanco en dispositivos móviles */
     }
     
 }

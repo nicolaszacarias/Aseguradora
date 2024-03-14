@@ -45,9 +45,9 @@ const secures = [
   },
   {
     icon: <MdAddBusiness />,
-    heading: "Comercio",
+    heading: "ART",
     detail:
-      "Protege los bienes y la responsabilidad civil de comercios y empresas ante diversos riesgos como incendios, robos, daños materiales, entre otros.",
+      "Ofrece cobertura a empleadores y empleados contra riesgos laborales. Incluye asistencia médica, compensación por incapacidades y pensiones por fallecimiento en caso de accidentes laborales.",
   },
   {
     icon: <IoBusiness/>,
