@@ -10,7 +10,7 @@ const data = [
   },
   {
     icon: <MdCancel />,
-    heading: "Acceso a diversas opciones y negociación",
+    heading: "Acceso a diversas opciones",
     detail:
       "Tenemos acceso a una amplia gama de opciones de cobertura de varias compañías aseguradoras, permitiendo comparaciones detalladas y negociaciones para obtener tarifas competitivas y coberturas adecuadas a tu persona.",
   },
