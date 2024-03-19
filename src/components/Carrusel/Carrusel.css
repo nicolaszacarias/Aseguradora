@@ -1,0 +1,36 @@
+/* .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-items {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .carousel-item {
+    scroll-snap-align: center;
+  }
+   */
+  /* .icon-container {
+    width: 120px; /* Tamaño del contenedor del icono 
+    height: 120px; /* Tamaño del contenedor del icono 
+    background-color: #fff; /* Color del fondo del contenedor 
+    border-radius: 8px; /* Radio de borde para el contenedor 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px; /* Espacio entre los iconos 
+    border: 2px solid transparent;
+    border-color: var(--green);
+  } */
+  /* .icon-container:hover{
+    transform: scale(1.1);
+}
+  .icon-container svg {
+    width: 40%; /* Tamaño del ícono dentro del contenedor 
+    height: 40%; /* Tamaño del ícono dentro del contenedor 
+    color: var(--green);/* Color del ícono 
+  } */

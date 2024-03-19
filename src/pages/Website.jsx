@@ -7,6 +7,7 @@ import Contact from "../components/contact/Contact";
 import GetStarted from "../components/GetStarted/GetStarted";
 
 import Companies from "../components/companies/Companies";
+// import SecureCarousel from "../components/Carrusel/Carrusel";
 const Website = () => {
     return (
         <div className="App">
@@ -17,6 +18,7 @@ const Website = () => {
         </div>
         <Companies/>
         <Value/>
+        {/* <SecureCarousel/> */}
         <Contact/>
         <GetStarted/>
         {/* <Footer/> */}

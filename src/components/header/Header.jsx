@@ -31,7 +31,7 @@
 //                     </button>
 //                 </div>
 //                 </OutsideClickHandler>
-//                 <div className="menu-icon" 
+//                 <div className="menu-icon"
 //             onClick={() => setMenuOpened((prev)=> !prev)}>
 //                     <BiMenuAltRight size={30}/>
 //             </div>
@@ -61,7 +61,9 @@ const Header = () => {
     <section className="h-wrapper" >
       <div className="flexCenter innerWidth paddings h-container">
         {/* logo */}
+        <Link to="/">
         <img src="./logux.png" alt="logo" width={150} />
+        </Link>
 
         {/* menu */}
         <OutsideClickHandler
