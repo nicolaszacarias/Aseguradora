@@ -22,7 +22,7 @@ const data = [
   },
   {
     icon: <MdAnalytics />,
-    heading: "Facilidad para realizar modificaciones",
+    heading: "Sencillez en realizar cambios",
     detail:
       "Una vez contratado el seguro, es posible realizar modificaciones o actualizaciones en línea, como cambios en la cobertura o en los datos del asegurado, sin necesidad de visitar una sucursal física.",
   },
