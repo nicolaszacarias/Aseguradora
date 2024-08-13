@@ -1,13 +1,10 @@
-.h-wrapper{
-     /* background: var(--black);  */
+/* .h-wrapper{
+     /* background: var(--black);  
     color: black;
     z-index: 99;
 }
 .h-container{
-    justify-content: space-between;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    color: var(--black);
+
 }
 .h-menu{
     gap: 1rem;
@@ -38,6 +35,79 @@
         border-radius: 10px;
         align-items: flex-start;
         box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.05);
-        transition: all 300ms ease-in;
+        /* transition: all 300ms ease-in; 
     }
+} */
+.h-wrapper {
+  z-index: 99;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.h-container {
+  justify-content: space-between;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  color: var(--black);
+}
+
+.h-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.h-menu > *:hover {
+  cursor: pointer;
+  /* color: #007bff; Change the hover color for better feedback */
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .h-menu {
+    position: absolute;
+    right: 1rem;
+    top: 3rem;
+    background: white;
+    color: var(--black);
+    gap: 1rem;
+    font-weight: 500;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.05);
+    display: none; /* Hidden by default, shown when menu is open */
+    transition: all 200ms ease;
+  }
+
+  .h-menu a {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .h-menu a:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Styles for when the menu is open */
+.menu-open .h-menu {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+

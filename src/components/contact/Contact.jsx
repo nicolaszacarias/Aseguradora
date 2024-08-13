@@ -26,7 +26,7 @@ const Contact = () => {
                   </div> 
                    <div className="flexColStart detail">
                      <span className="primaryText">Llamar</span>
-                    <span className="secondaryText">3515214529</span> 
+                    <span className="secondaryText">+54 9 351 864-7777</span> 
                   </div> 
                 </div> 
                 <a href="tel:+543515214529" className="modex">
@@ -41,11 +41,11 @@ const Contact = () => {
                   </div>
                   <div className="flexColStart detail">
                     <span className="primaryText">Whatsapp</span>
-                    <span className="secondaryText">3515214529</span>
+                    <span className="secondaryText">+54 9 351 864-7777</span>
                   </div>
                 </div>
                 {/* <button>RECORDATORIO BOTON WHATSAPP</button> */}
-                <a href="https://wa.link/nkwio8">
+                <a href="https://wa.link/ofe549">
                 <div className="flexCenter button">Chat now</div>
                 </a>
               </div>
