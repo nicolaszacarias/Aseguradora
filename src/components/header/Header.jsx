@@ -132,7 +132,7 @@ const Header = () => {
             <a href="/#contact-us">Contáctanos</a>
             <NavLink to="/Seguros">Seguros</NavLink>
             <button className="button">
-              <a href="/#get-started">Cotiza Ya!</a>
+              <a href="https://www.clientes.polko.com.ar/MjQ5OjE3MDg=">Cotiza Ya!</a>
             </button>
           </div>
         </OutsideClickHandler>
