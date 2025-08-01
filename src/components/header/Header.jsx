@@ -115,8 +115,8 @@ const Header = () => {
       <div className="flexCenter innerWidth paddings h-container">
         {/* logo */}
         <Link to="/">
-          <img src="./logux.png" alt="logo" width={150} />
-        </Link>
+          <img src="./logoaseguradora-ult.png" alt="logo" width={150} />
+        </Link> 
 
         {/* menu */}
         <OutsideClickHandler
@@ -131,6 +131,7 @@ const Header = () => {
             <a href="/#value">Nosotros</a>
             <a href="/#contact-us">Contáctanos</a>
             <NavLink to="/Seguros">Seguros</NavLink>
+            <NavLink to="/Siniestro">Siniestro</NavLink>
             <button className="button">
               <a href="https://www.clientes.polko.com.ar/MjQ5OjE3MDg=">Cotiza Ya!</a>
             </button>

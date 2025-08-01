@@ -2,6 +2,7 @@ import "./App.css";
 import Layout from "./components/Layout/Layout";
 import Secures from "./components/Secures/Secures";
 import Website from "./pages/Website";
+import SiniestroForm from "./components/formulario/Poliza"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Route element={<Layout/>}>
     <Route path="/" element={<Website/>}/>
     <Route path="/Seguros" element={<Secures/>}/>
+    <Route path="/Siniestro" element={<SiniestroForm/>}/>
     </Route>
     </Routes>
     </BrowserRouter>

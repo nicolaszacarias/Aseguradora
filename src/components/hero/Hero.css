@@ -12,7 +12,7 @@
     color: white;
     position: relative;
     padding-bottom: 2rem;
-    background-image: url("../../../public/contact.jpg"); /* Reemplaza 'tu_imagen.jpg' con la ruta de tu imagen de fondo */
+   /* background-image: url("../../../public/contact.jpg");  Reemplaza 'tu_imagen.jpg' con la ruta de tu imagen de fondo */
     background-size: cover;
     background-position: center;
 }

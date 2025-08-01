@@ -1,9 +1,9 @@
 .inner-container{
     gap: 1.5rem;
-    background: #388771;
+    background: #2D7BE5;
     padding: 2rem;
     border-radius: 10px;
-    border: 6px solid #388771;
+    border: 6px solid #2D7BE5;;
     text-align: center;
 }
 
@@ -15,7 +15,7 @@
     color: rgba(255, 255, 255, 0.587);
 }
 .inner-container .button {
-    background: #388771;
+    background: #2D7BE5;
     border: 2px solid white;
     box-shadow: var(--shadow);
     border-radius: 10px;

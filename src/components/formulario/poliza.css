@@ -1,0 +1,49 @@
+.siniestro-form-wrapper {
+  padding: 2rem;
+  background-color: #f5f5f5;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.siniestro-form-wrapper h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2D7BE5;
+}
+
+.siniestro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.siniestro-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.siniestro-form input,
+.siniestro-form select,
+.siniestro-form textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.siniestro-form button {
+  background-color: #2D7BE5;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.siniestro-form button:hover {
+  background-color: #1c5dc9;
+}

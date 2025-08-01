@@ -1,32 +1,53 @@
-// import React, { useState } from 'react';
-// import secures from "../../utils/secures.jsx"; // Asegúrate de tener un archivo con la lista de seguros
-// import "./Carrusel.css";
-// const SecureCarousel = () => {
-//   const [currentIndex, setCurrentIndex] = useState(0);
+import React, { useState, useEffect } from "react";
+import "./Carrusel.css";
+import secures from "../../utils/secures";
 
-//   const goToPrevious = () => {
-//     setCurrentIndex((prevIndex) => (prevIndex === 0 ? secures.length - 1 : prevIndex - 1));
-//   };
+const SecureCarousel = () => {
+  const [startIndex, setStartIndex] = useState(0);
 
-//   const goToNext = () => {
-//     setCurrentIndex((prevIndex) => (prevIndex === secures.length - 1 ? 0 : prevIndex + 1));
-//   };
+  // Extender para que al final nunca queden <4 elementos
+  const extendedSecures = [...secures, ...secures.slice(0, 3)];
 
-//   return (
-//     <div className="carousel">
-//       <button onClick={goToPrevious}>&lt;</button>
-//       <div className="carousel-items">
-//         {secures.map((secure, index) => (
-//           <div key={index} className={`carousel-item ${index === currentIndex ? 'active' : ''}`}>
-//             <div className="icon-container">
-//               {secure.icon}
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//       <button onClick={goToNext}>&gt;</button>
-//     </div>
-//   );
-// };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStartIndex((prev) => (prev + 4) % extendedSecures.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [extendedSecures.length]);
 
-// export default SecureCarousel;
+  const handleNext = () => {
+    setStartIndex((prev) => (prev + 4) % extendedSecures.length);
+  };
+  const handlePrev = () => {
+    setStartIndex(
+      (prev) => (prev - 4 + extendedSecures.length) % extendedSecures.length
+    );
+  };
+
+  const visibleSecures = extendedSecures.slice(startIndex, startIndex + 4);
+
+  return (
+    <div className="secures-wrapper">
+      <h2 className="secures-title">Nuestros Seguros</h2>
+      <div className="secures-controls">
+        <button className="carousel-button prev" onClick={handlePrev}>
+          ‹
+        </button>
+        <div className="secures-grid">
+          {visibleSecures.map((item, i) => (
+            <div className="secure-card" key={i}>
+              <div className="secure-icon">{item.icon}</div>
+              <h3>{item.heading}</h3>
+              <p>{item.detail}</p>
+            </div>
+          ))}
+        </div>
+        <button className="carousel-button next" onClick={handleNext}>
+          ›
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default SecureCarousel;

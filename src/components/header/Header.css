@@ -48,9 +48,10 @@
 
 .h-container {
   justify-content: space-between;
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
   color: var(--black);
+  min-height: 60px;
 }
 
 .h-menu {
@@ -61,7 +62,11 @@
 
 .h-menu > *:hover {
   cursor: pointer;
-  /* color: #007bff; Change the hover color for better feedback */
+}
+
+/* Estilos para logo más chico en desktop */
+.h-container img {
+  width: 120px;
 }
 
 .menu-icon {
@@ -69,9 +74,14 @@
   cursor: pointer;
 }
 
+/* Móvil */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
+  }
+
+  .h-container img {
+    width: 140px; /* Un poco más grande en móvil si querés */
   }
 
   .h-menu {
@@ -87,7 +97,7 @@
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.05);
-    display: none; /* Hidden by default, shown when menu is open */
+    display: none;
     transition: all 200ms ease;
   }
 
@@ -103,11 +113,12 @@
   }
 }
 
-/* Styles for when the menu is open */
+/* Mostrar menú abierto */
 .menu-open .h-menu {
   display: flex;
   opacity: 1;
   visibility: visible;
 }
+
 
 

@@ -86,9 +86,20 @@ const Contact = () => {
 
         {/* right side */}
         <div className="flexEnd c-right">
-          <div className="image-container">
-            <img src="./contacto10.jpg" alt="" />
-          </div>
+                <div className="map-container" style={{ width: '100%', height: '400px', borderRadius: '12px', overflow: 'hidden' }}>
+  <h3 className="primaryText" style={{ marginBottom: '1rem' }}>Estamos ubicados en:</h3>
+
+  <iframe
+    title="Ubicación Asegurarnet"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.6316333632023!2d-64.18338982481083!3d-31.419073296657636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a285bc3a9287%3A0xdd82d6b33c6e3db1!2sEnfermera%20Clermont%20170%2C%20X5000IUC%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1717090063096!5m2!1ses!2sar"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
         </div>
       </div>
     </div>
