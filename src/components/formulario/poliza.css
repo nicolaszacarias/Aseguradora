@@ -1,49 +1,111 @@
+/* --- CONTENEDOR PRINCIPAL --- */
 .siniestro-form-wrapper {
-  padding: 2rem;
-  background-color: #f5f5f5;
-  max-width: 600px;
-  margin: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* --- TITULO --- */
 .siniestro-form-wrapper h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: #2D7BE5;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #003366; /* azul corporativo */
 }
 
+/* --- FORMULARIO EN DOS COLUMNAS --- */
 .siniestro-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dos columnas */
+  gap: 20px 30px;
 }
 
+/* --- INPUTS COMPLETOS (OCUPAN DOS COLUMNAS) --- */
+.full-width {
+  grid-column: 1 / -1; /* hace que el campo ocupe toda la fila */
+}
+
+/* --- LABELS --- */
 .siniestro-form label {
-  font-weight: bold;
+  font-weight: 600;
   color: #333;
+  margin-bottom: 5px;
+  display: block;
 }
 
+/* --- INPUTS / SELECT / TEXTAREA --- */
 .siniestro-form input,
 .siniestro-form select,
 .siniestro-form textarea {
-  padding: 0.75rem;
-  border-radius: 8px;
+  width: 100%;
+  padding: 10px 14px;
   border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-.siniestro-form button {
-  background-color: #2D7BE5;
-  color: white;
-  border: none;
-  padding: 1rem;
   border-radius: 8px;
   font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.siniestro-form button:hover {
-  background-color: #1c5dc9;
+/* Focus con borde azul */
+.siniestro-form input:focus,
+.siniestro-form select:focus,
+.siniestro-form textarea:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* --- CHECKBOX --- */
+.siniestro-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+/* --- BOTÓN --- */
+.button {
+  background: #007BFF;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Hover efecto */
+.button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 91, 187, 0.3);
+}
+
+/* --- RESPONSIVE: en pantallas chicas vuelve a 1 columna --- */
+@media (max-width: 768px) {
+  .siniestro-form {
+    grid-template-columns: 1fr; /* una sola columna */
+  }
+}
+
+.siniestro-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+  gap: 20px 40px;
+}
+
+.form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Responsive: en pantallas chicas apila */
+@media (max-width: 768px) {
+  .siniestro-form {
+    grid-template-columns: 1fr; /* una sola columna */
+  }
 }
