@@ -39,9 +39,7 @@ const Hero = () => {
           </div>
           <div className="hero-des herostar">
             <span className="secondaryText white-text">
-              Protegé lo que más importa con nuestros seguros a medida.
-            </span>
-            <span className="secondaryText white-text">
+              Protegé lo que más importa con nuestros seguros a medida. <br />
               Olvidate de todas las dificultades de encontrar un seguro para vos.
             </span>
           </div>
