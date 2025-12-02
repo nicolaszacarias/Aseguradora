@@ -85,4 +85,3 @@ const SecureCarousel = () => {
 };
 
 export default SecureCarousel;
-
