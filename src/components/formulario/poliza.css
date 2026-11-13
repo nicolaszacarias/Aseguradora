@@ -1,0 +1,120 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+.siniestro-form-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- TÍTULO PRINCIPAL --- */
+.siniestro-form-wrapper h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #003366; /* azul corporativo */
+}
+
+/* --- GRILLA DEL FORMULARIO --- */
+.siniestro-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dos columnas */
+  column-gap: 60px;              /* separación horizontal entre columnas */
+  row-gap: 30px;                 /* separación vertical entre filas */
+}
+
+/* --- ELEMENTOS QUE OCUPAN TODO EL ANCHO --- */
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* --- BLOQUES GRANDES (ASEGURADO / TERCERO) --- */
+.bloque-siniestro {
+  background: #f7f9fc;
+  padding: 24px 24px 28px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e1e7f0;
+}
+
+/* --- TÍTULOS DE BLOQUES --- */
+.bloque-siniestro h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #003366;
+}
+
+/* --- COLUMNAS INFERIORES (CONTACTO / SINIESTRO) --- */
+.form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* --- LABELS --- */
+.siniestro-form label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* --- INPUTS / SELECT / TEXTAREA --- */
+.siniestro-form input,
+.siniestro-form select,
+.siniestro-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Focus con borde azul */
+.siniestro-form input:focus,
+.siniestro-form select:focus,
+.siniestro-form textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* --- CHECKBOX --- */
+.siniestro-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+/* --- BOTÓN --- */
+.button {
+  background: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Hover efecto */
+.button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 91, 187, 0.3);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .siniestro-form {
+    grid-template-columns: 1fr; /* una sola columna en mobile */
+  }
+
+  .bloque-siniestro {
+    margin-bottom: 10px;
+  }
+}

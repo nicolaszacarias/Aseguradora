@@ -1,0 +1,86 @@
+.h-wrapper {
+  z-index: 99;
+  position: sticky;
+  top: 0;
+  background-color: white;          /* fondo blanco SIEMPRE */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del header */
+.h-container {
+  justify-content: space-between;
+  align-items: center;              /* centra logo y menú verticalmente */
+  color: var(--black);
+  padding-top: 0.2rem;              /* header más finito */
+  padding-bottom: 0.2rem;
+  /* sin min-height raro, dejamos que el contenido defina la altura */
+}
+
+/* Menú desktop */
+.h-menu {
+  display: flex;
+  gap: 1.5rem;                      /* un poco menos de espacio entre items */
+  align-items: center;
+}
+
+.h-menu > *:hover {
+  cursor: pointer;
+}
+
+/* Logo grande pero sin deformar el header */
+.h-container img {
+  width: 150px;                     /* mantenés logo grande */
+  display: block;                   /* evita espacio fantasma debajo de la imagen */
+}
+
+/* Ícono menú mobile */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* ------- Mobile ------- */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .h-container img {
+    width: 140px;                   /* levemente más chico en mobile */
+  }
+
+  .h-menu {
+    position: absolute;
+    right: 1rem;
+    top: 3rem;
+    background: white;
+    color: var(--black);
+    gap: 1rem;
+    font-weight: 500;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    display: none;
+    transition: all 200ms ease;
+  }
+
+  .h-menu a {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .h-menu a:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Mostrar menú abierto en mobile */
+.menu-open .h-menu {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
