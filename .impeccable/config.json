@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "roboto",
+        "createdAt": "2026-11-13T19:08:31.314Z",
+        "reason": "Claude: Roboto is the font the SSN MACOP manual (Res. SSN 225/2022) requires for the SSN band; used only in .f-ssn"
+      }
+    ]
+  }
+}

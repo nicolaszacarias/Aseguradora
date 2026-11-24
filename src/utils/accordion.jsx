@@ -1,31 +1,33 @@
 import { HiShieldCheck } from "react-icons/hi";
-import { MdCancel, MdAnalytics } from "react-icons/md";
-import { FaClock } from "react-icons/fa";
+import { MdCompareArrows, MdSupportAgent } from "react-icons/md";
+import { FaRegFileAlt } from "react-icons/fa";
+
+// Servicios que presta un productor asesor (Ley 22.400, art. 10). Sin promesas de precio ni de resultado.
 const data = [
   {
-    icon: <HiShieldCheck/>,
+    icon: <HiShieldCheck />,
     heading: "Asesoramiento personalizado",
     detail:
-      "Los brokers ofrecen orientación especializada y adaptada a las necesidades individuales de cada cliente, proporcionando recomendaciones objetivas sobre las opciones de cobertura más adecuadas.",
+      "Te explicamos las opciones disponibles para tu caso y las cláusulas de cada póliza, para que decidas con información clara.",
   },
   {
-    icon: <MdCancel />,
-    heading: "Acceso a diversas opciones",
+    icon: <MdCompareArrows />,
+    heading: "Varias compañías para comparar",
     detail:
-      "Tenemos acceso a una amplia gama de opciones de cobertura de varias compañías aseguradoras, permitiendo comparaciones detalladas y negociaciones para obtener tarifas competitivas y coberturas adecuadas a tu persona.",
+      "Trabajamos con distintas aseguradoras, así podés comparar coberturas y costos antes de elegir.",
   },
   {
-    icon: <FaClock />,
-    heading: "Ahorro de tiempo",
+    icon: <FaRegFileAlt />,
+    heading: "Gestiones durante la vigencia",
     detail:
-      "Elimina la necesidad de esperas y trámites tediosos al completar la contratación de forma rápida y eficiente en línea. Después de contratar el seguro, puedes actualizar la cobertura o tus datos de manera fácil y rápida, sin necesidad de acudir personalmente a una sucursal.",
+      "Te acompañamos en renovaciones, cambios de datos o de cobertura y consultas sobre tus derechos y obligaciones como asegurado.",
   },
   {
-    icon: <MdAnalytics />,
-    heading: "Sencillez en realizar cambios",
+    icon: <MdSupportAgent />,
+    heading: "Acompañamiento ante un siniestro",
     detail:
-      "Una vez contratado el seguro, es posible realizar modificaciones o actualizaciones en línea, como cambios en la cobertura o en los datos del asegurado, sin necesidad de visitar una sucursal física.",
+      "Te orientamos sobre cómo y cuándo avisar a tu aseguradora y qué documentación reunir. La denuncia formal se registra ante la compañía.",
   },
 ];
-// Facilidad para realizar modificaciones
+
 export default data;

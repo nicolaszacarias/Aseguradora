@@ -1,22 +1,20 @@
-.inner-container{
-    gap: 1.5rem;
-    background: #2D7BE5;
-    padding: 2rem;
-    border-radius: 10px;
-    border: 6px solid #2D7BE5;;
-    text-align: center;
+.g-wrapper { padding-bottom: clamp(56px, 9vw, 112px); }
+.g-panel {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  align-items: center;
+  padding: clamp(28px, 5vw, 56px);
+  border-radius: var(--radio-l);
+  background: var(--azul);
+  color: var(--blanco);
 }
+.g-panel h2 { margin-bottom: 12px; }
+.g-panel p { color: #e6efff; }
+.g-nota { margin-top: 14px; font-size: 0.9rem; }
+.g-panel :focus-visible { outline-color: var(--blanco); }
 
-.inner-container .primaryText{
-    color: white;
-    font-weight: 600;
-}
-.inner-container .secondaryText{
-    color: rgba(255, 255, 255, 0.587);
-}
-.inner-container .button {
-    background: #2D7BE5;
-    border: 2px solid white;
-    box-shadow: var(--shadow);
-    border-radius: 10px;
+@media (max-width: 880px) {
+  .g-panel { grid-template-columns: 1fr; }
+  .g-accion .btn { width: 100%; }
 }

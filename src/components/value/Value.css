@@ -1,78 +1,40 @@
-.v-container .image-container {
-  border: 8px solid rgb(232, 232, 232, 93%);
-  display: flex;
-  justify-content: center;
+.v-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(32px, 6vw, 88px);
   align-items: center;
 }
-.v-container > div {
-  flex: 1;
-}
-.v-right {
-  gap: 0.5rem;
-}
-.accordion {
-  margin-top: 2rem;
-  border: none;
-}
-.accordionItem {
-  background: white;
-  border: 0.8px solid rgba(128, 128, 128, 0.143);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-.accordionItem.expanded {
-  box-shadow: var(--shadow);
-  border-radius: 6px;
-}
-.accordionButton {
-  background: white;
-  padding: 1rem;
+.v-foto img {
   width: 100%;
-  justify-content: space-between;
-  cursor: pointer;
+  aspect-ratio: 5 / 6;
+  object-fit: cover;
+  border-radius: var(--radio-l);
 }
-.icon {
-  padding: 10px;
-  background: #eeeeff;
-  border-radius: 5px;
+.v-grid h2 { text-wrap: balance; }
+.v-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 32px;
+  margin-top: 40px;
 }
-.icon svg {
-  fill: var(--green);
+.v-lista li { display: flex; gap: 16px; }
+.v-icono {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--cielo);
+  color: var(--azul);
+  font-size: 1.3rem;
 }
-.accordionButton .primaryText {
-  font-size: 1.1rem;
-}
+.v-lista h3 { font-size: 1.125rem; margin-bottom: 6px; }
+.v-lista p { color: var(--piedra); font-size: 1rem; }
 
-@media (max-width: 1024px) {
-  .v-container {
-      flex-direction: column;
-      align-items: center; /* Center the content horizontally */
-  }
-
-  .v-left, .v-right {
-      width: 100%; /* Make sure both sides take full width */
-      text-align: center; /* Center text */
-  }
-}
-
-@media (max-width: 768px) {
-  .accordionButton .primaryText {
-      font-size: 0.8rem;
-  }
-
-  .v-left, .v-right {
-      width: 100%; /* Ensure full width */
-  }
-
-  .v-left {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 1rem; /* Add space between sections */
-  }
-
-  .v-right {
-      align-items: center;
-      text-align: center;
-  }
+@media (max-width: 880px) {
+  .v-grid { grid-template-columns: 1fr; }
+  .v-foto img { aspect-ratio: 16 / 10; object-position: center 30%; }
+  .v-lista { grid-template-columns: 1fr; }
 }

@@ -1,152 +1,67 @@
-// import React, { useState } from "react";
-// import "./Header.css"
-// import { Link, NavLink } from "react-router-dom";
-// import { BiMenuAltRight } from "react-icons/bi"
-// import OutsideClickHandler from "react-outside-click-handler";
-// const Header = () => {
-//     const [menuOpened, setMenuOpened] = useState(false)
-
-//     const getMenuStyles = (menuOpened) => {
-//         if (document.documentElement.clientWidth <= 800)
-//         {
-//             return {right: !menuOpened && "-100%"}
-//         }
-//     }
-//     return (
-//         <section className="h-wrapper">
-//             <div className="h-container flexCenter paddings innerWitdh">
-//                 <Link to="/">
-//                 <img src="./logux.png" alt="logo" width={150} />
-//                 </Link>
-//                 <OutsideClickHandler onOutsideClick={() => {
-//                     setMenuOpened(false)
-//                 }}>
-//                 <div className="flexCenter h-menu" style={getMenuStyles(menuOpened)}>
-//                     <a href="/#value">Nosotros</a>
-//                     <a href="/#contact-us">Contactanos</a>
-//                     {/* <a href="/#get-started">Contacta</a> */}
-//                     <NavLink to="Seguros">Seguros</NavLink>
-//                     <button className="button">
-//                     <a href="/#get-started">Cotiza Ya!</a>
-//                     </button>
-//                 </div>
-//                 </OutsideClickHandler>
-//                 <div className="menu-icon"
-//             onClick={() => setMenuOpened((prev)=> !prev)}>
-//                     <BiMenuAltRight size={30}/>
-//             </div>
-//             </div>
-
-//         </section>
-//     )
-// }
-
-// export default Header
-
-
-
-// import React, { useState } from "react";
-// import "./Header.css"
-// import { Link, NavLink } from "react-router-dom";
-// import { BiMenuAltRight } from "react-icons/bi"
-// import OutsideClickHandler from "react-outside-click-handler";
-
-// const Header = () => {
-//   const [menuOpened, setMenuOpened] = useState(false);
-//   const getMenuStyles = (menuOpened) => {
-//     if (document.documentElement.clientWidth <= 800)
-//    {
-//         return {right: !menuOpened && "-100%"}
-//     }
-// }
-
-//   return (
-//     <section className="h-wrapper" >
-//       <div className="flexCenter innerWidth paddings h-container">
-//         {/* logo */}
-//         <Link to="/">
-//         <img src="./logux.png" alt="logo" width={150} />
-//         </Link>
-
-//         {/* menu */}
-//         <OutsideClickHandler
-//           onOutsideClick={() => {
-//             setMenuOpened(false);
-//           }}
-//         >
-//           <div
-//             // ref={menuRef}
-//             className="flexCenter h-menu"
-//             style={getMenuStyles(menuOpened)}
-//           >
-//                      <a href="/#value">Nosotros</a>
-//                      <a href="/#contact-us">Contactanos</a>
-//                      <NavLink to="Seguros">Seguros</NavLink>
-//                     <button className="button">
-//                    <a href="/#get-started">Cotiza Ya!</a>
-//                 </button>
-//           </div>
-//         </OutsideClickHandler>
-
-//         {/* for medium and small screens */}
-//         <div className="menu-icon" onClick={() => setMenuOpened((prev) => !prev)}>
-//           <BiMenuAltRight size={30} />
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Header;
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { BiMenuAltRight, BiX } from "react-icons/bi";
+import { site } from "../../utils/site";
 import "./Header.css";
-import { BiMenuAltRight } from "react-icons/bi";
-import { getMenuStyles } from "../../utils/common";
-import OutsideClickHandler from "react-outside-click-handler";
-import { Link, NavLink } from "react-router-dom";
+
+const enlaces = [
+  { to: "/#nosotros", label: "Nosotros" },
+  { to: "/seguros", label: "Seguros", nav: true },
+  { to: "/siniestro", label: "Siniestros", nav: true },
+  { to: "/#contacto", label: "Contacto" },
+];
 
 const Header = () => {
-  const [menuOpened, setMenuOpened] = useState(false);
+  const [abierto, setAbierto] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => setAbierto(false), [location]);
+
+  useEffect(() => {
+    if (!abierto) return;
+    const onKey = (e) => e.key === "Escape" && setAbierto(false);
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [abierto]);
 
   return (
-    <section
-      className={`h-wrapper ${menuOpened ? "menu-open" : ""}`} // Toggle class based on menuOpened
-    >
-      <div className="flexCenter innerWidth paddings h-container">
-        {/* logo */}
-        <Link to="/">
-          <img src="./logoaseguradora-ult.png" alt="logo" width={150} />
-        </Link> 
+    <header className="h-wrapper">
+      <div className="contenedor h-container">
+        <Link to="/" className="h-logo" aria-label={`${site.marca}, ${site.descriptor} — inicio`}>
+          <img src="/logoaseguradora-ult.png" alt="" width="150" height="150" />
+        </Link>
 
-        {/* menu */}
-        <OutsideClickHandler
-          onOutsideClick={() => {
-            setMenuOpened(false);
-          }}
+        <button
+          type="button"
+          className="h-toggle"
+          aria-expanded={abierto}
+          aria-controls="menu-principal"
+          onClick={() => setAbierto((v) => !v)}
         >
-          <div
-            className="flexCenter h-menu"
-            style={getMenuStyles(menuOpened)}
-          >
-            <a href="/#value">Nosotros</a>
-            <a href="/#contact-us">Contáctanos</a>
-            <NavLink to="/Seguros">Seguros</NavLink>
-            <NavLink to="/Siniestro">Siniestro</NavLink>
-            <button className="button">
-              <a href="https://www.clientes.polko.com.ar/MjQ5OjE3MDg=">Cotiza Ya!</a>
-            </button>
-          </div>
-        </OutsideClickHandler>
+          {abierto ? <BiX size={28} aria-hidden /> : <BiMenuAltRight size={28} aria-hidden />}
+          <span className="visualmente-oculto">{abierto ? "Cerrar menú" : "Abrir menú"}</span>
+        </button>
 
-        {/* for medium and small screens */}
-        <div
-          className="menu-icon"
-          onClick={() => setMenuOpened((prev) => !prev)}
-        >
-          <BiMenuAltRight size={30} />
-        </div>
+        <nav id="menu-principal" className={`h-menu ${abierto ? "is-abierto" : ""}`} aria-label="Principal">
+          <ul>
+            {enlaces.map((e) => (
+              <li key={e.to}>
+                {e.nav ? <NavLink to={e.to}>{e.label}</NavLink> : <Link to={e.to}>{e.label}</Link>}
+              </li>
+            ))}
+          </ul>
+          <a className="btn btn--primario" href={site.cotizadorUrl} target="_blank" rel="noopener noreferrer">
+            Cotizar online
+            <span className="visualmente-oculto"> (abre el cotizador de Polko en otra pestaña)</span>
+          </a>
+        </nav>
+        {abierto && <div className="h-velo" onClick={() => setAbierto(false)} aria-hidden />}
       </div>
-    </section>
+    </header>
   );
 };
 

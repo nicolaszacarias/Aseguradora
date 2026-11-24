@@ -1,58 +1,50 @@
-import React, { useEffect, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import { MdOutlinePlace } from "react-icons/md";
+import { site } from "../../utils/site";
 import "./Hero.css";
 
-const Hero = () => {
-  const imagenes = [
-    "/contact.jpg",
-    "/contact1.webp",
-    "/contact2.jpg",
-    "/contact3.jpg"
-  ];
-
-  const [indice, setIndice] = useState(0);
-
-  useEffect(() => {
-    const intervalo = setInterval(() => {
-      setIndice((prevIndice) => (prevIndice + 1) % imagenes.length);
-    }, 15000); // 6 segundos
-
-    return () => clearInterval(intervalo);
-  }, [imagenes.length]);
-
-  const fondoActual = {
-    backgroundImage: `url(${imagenes[indice]})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    transition: "background-image 1s ease-in-out"
-  };
-
-  return (
-    <section className="hero-wrapper" style={fondoActual}>
-      <div className="paddings innerWidth flexCenter hero-container">
-        <div className="herostar hero-left">
-          <div className="hero-title">
-            <div className="orange-circle" />
-            <h1>
-              Descubrí <br />
-              Tu mejor <br /> Seguro
-            </h1>
-          </div>
-          <div className="hero-des herostar">
-            <span className="secondaryText white-text">
-              Protegé lo que más importa con nuestros seguros a medida. <br />
-              Olvidate de todas las dificultades de encontrar un seguro para vos.
-            </span>
-          </div>
-          <a
-            className="button"
-            href="https://www.clientes.polko.com.ar/MjQ5OjE3MDg="
-          >
-            Cotizá Ya!
+const Hero = () => (
+  <section className="hero" aria-labelledby="hero-titulo">
+    <div className="contenedor hero-grid">
+      <div className="hero-texto">
+        <p className="hero-kicker">{site.descriptor} en Córdoba</p>
+        <h1 id="hero-titulo">Elegí tu seguro con alguien que te lo explique.</h1>
+        <p className="hero-bajada">
+          Comparamos opciones de distintas compañías y te acompañamos mientras tu póliza está vigente,
+          también cuando tenés un siniestro.
+        </p>
+        <div className="hero-acciones">
+          <a className="btn btn--primario" href={site.cotizadorUrl} target="_blank" rel="noopener noreferrer">
+            Cotizar online
+            <span className="visualmente-oculto"> (abre otra pestaña)</span>
+          </a>
+          <a className="btn btn--borde" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">
+            <FaWhatsapp aria-hidden size={20} /> Escribinos por WhatsApp
           </a>
         </div>
+        <p className="hero-nota">
+          La cotización online se hace en Polko, una plataforma externa. Una cotización no es un contrato
+          ni otorga cobertura: la contratación y su vigencia dependen de la aceptación de la compañía aseguradora.
+        </p>
       </div>
-    </section>
-  );
-};
+
+      <figure className="hero-foto">
+        <img
+          src="/contact3.jpg"
+          alt="Nuestra oficina de Enfermera Clermont 170, con dos asesores trabajando en sus escritorios"
+          width="1600"
+          height="1200"
+          fetchpriority="high"
+        />
+        <figcaption>
+          <MdOutlinePlace aria-hidden size={22} />
+          <span>
+            Atención presencial en <strong>{site.direccion}</strong>
+          </span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+);
 
 export default Hero;

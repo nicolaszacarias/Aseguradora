@@ -1,28 +1,53 @@
-.f-container{
-    justify-content: space-between;
-    border-top: .5px solid rgba(0,0,0,0.148)
+.f-wrapper { border-top: 1px solid var(--linea); background: var(--blanco); padding-bottom: 88px; }
+.f-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 32px;
+  padding-block: 48px 40px;
 }
-.f-left{
-    gap: 1rem;
+.f-marca img { width: 140px; height: auto; margin-bottom: 12px; }
+.f-marca p { color: var(--piedra); }
+.f-titulo {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 0;
+  margin-bottom: 12px;
 }
-.f-menu{
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-    font-weight: 500;
+.f-grid ul { list-style: none; display: grid; gap: 4px; }
+.f-grid ul a {
+  display: inline-block;
+  padding-block: 6px;
+  color: var(--piedra);
+  text-underline-offset: 4px;
 }
-@media (max-width: 768px) {
-    .f-container{
-        justify-content: center;
-    }
-    .f-container>div{
-        align-items: center!important;
-        text-align: center;
-    }
-    .f-right{
-        justify-content: center;
-    }
-    .img-derecha {
-        float: right; /* Alinea la imagen a la derecha */
-        margin-left: 10px; /* Ajusta el margen izquierdo para separar la imagen del texto */
-      }
-}   
+.f-grid ul a:hover { color: var(--azul); }
+
+/* Banda SSN según el Manual de Convivencia Publicitaria (tipografía Roboto, fondo #F1F1F1, texto #4A4A49) */
+.f-ssn {
+  background: #f1f1f1;
+  border-top: 3px solid #29abe2;
+  font-family: Roboto, Arial, sans-serif;
+  color: #4a4a49;
+  font-size: 13px;
+  line-height: 1.35;
+}
+.f-ssn-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 40px;
+  min-height: 95px;
+  padding-block: 18px;
+}
+.f-ssn strong { display: block; font-size: 14px; color: #3a3a39; }
+.f-ssn a { color: inherit; text-decoration: none; }
+.f-ssn a:hover { text-decoration: underline; }
+
+.f-legal { padding-block: 20px; }
+.f-legal p { font-size: 0.9rem; color: var(--piedra); max-width: none; }
+
+@media (max-width: 880px) {
+  .f-grid { grid-template-columns: 1fr 1fr; }
+  .f-marca { grid-column: 1 / -1; }
+  .f-ssn-grid { display: grid; grid-template-columns: 1fr 1fr; }
+}

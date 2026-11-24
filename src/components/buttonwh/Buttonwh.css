@@ -1,33 +1,16 @@
 .whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366; /* ✅ Verde oficial WhatsApp */
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-    z-index: 999;
-    transition: transform 0.3s ease, background-color 0.2s ease;
+  position: fixed;
+  right: 16px;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  background: #128c4b; /* verde WhatsApp oscurecido: el ícono blanco supera 3:1 (WCAG 1.4.11) */
+  color: var(--blanco);
+  box-shadow: 0 8px 24px -6px rgba(15, 39, 66, 0.4);
+  transition: transform 160ms ease;
 }
-
-.whatsapp-button:hover {
-    transform: scale(1.1);
-    background-color: #1ebe57; /* ✅ tono hover más oscuro */
-}
-
-/* ✅ Versión mobile */
-@media (max-width: 768px) {
-  .whatsapp-button {
-      bottom: 12px;
-      right: 12px;
-      width: 50px;
-      height: 50px;
-      font-size: 20px;
-  }
-}
+.whatsapp-button:hover { transform: scale(1.06); }

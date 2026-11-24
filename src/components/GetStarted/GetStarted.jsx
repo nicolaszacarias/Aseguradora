@@ -1,23 +1,30 @@
-import React from "react";
+import { site } from "../../utils/site";
 import "./GetStarted.css";
-const GetStarted = () => {
-  return (
-    <div id="get-started" className="g-wrapper">
-      <div className="paddings innerWidth g-container">
-        <div className="flexColCenter inner-container">
-          <span className="primaryText">Empeza con Asegurar</span>
-          <span className="secondaryText">
-            No dejes nada al azar, asegura un futuro tranquilo con nosotros.   
-            <br />
-            Completa los datos y ya esta!
-          </span>
-          <button className="button">
-            <a href="https://www.clientes.polko.com.ar/MjQ5OjE3MDg=">Comenza!</a>
-          </button>
+
+const GetStarted = () => (
+  <section id="cotizar" className="g-wrapper" aria-labelledby="g-titulo">
+    <div className="contenedor">
+      <div className="g-panel">
+        <div>
+          <h2 id="g-titulo">Pedí tu cotización</h2>
+          <p>
+            Completá tus datos en el cotizador online y compará opciones. Si tenés dudas, te ayudamos a
+            interpretarlas antes de decidir.
+          </p>
+        </div>
+        <div className="g-accion">
+          <a className="btn btn--claro" href={site.cotizadorUrl} target="_blank" rel="noopener noreferrer">
+            Ir al cotizador
+            <span className="visualmente-oculto"> (abre otra pestaña)</span>
+          </a>
+          <p className="g-nota">
+            El cotizador es de Polko, un servicio externo con sus propias condiciones y política de privacidad.
+            Una cotización no es un contrato ni otorga cobertura.
+          </p>
         </div>
       </div>
     </div>
-  );
-};
+  </section>
+);
 
 export default GetStarted;

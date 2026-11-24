@@ -1,22 +1,12 @@
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp } from "react-icons/fa";
+import { site } from "../../utils/site";
 import "./Buttonwh.css";
-const WhatsAppButton = () => {
-  const handleWhatsAppClick = () => {
-    // Acción a realizar al hacer clic en el botón de WhatsApp
-    window.open("https://wa.link/ofe549", '_blank');
-  };
 
-  return (
-    <a
-      href="https://wa.link/ofe549"
-      className="whatsapp-button"
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={handleWhatsAppClick}
-    >
-      <FaWhatsapp size={30} />
-    </a>
-  );
-};
+const WhatsAppButton = () => (
+  <a href={site.whatsapp.href} className="whatsapp-button" target="_blank" rel="noopener noreferrer">
+    <FaWhatsapp size={30} aria-hidden />
+    <span className="visualmente-oculto">Escribinos por WhatsApp (abre otra pestaña)</span>
+  </a>
+);
 
 export default WhatsAppButton;

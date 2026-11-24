@@ -1,65 +1,77 @@
-import { FaCar, FaHome, FaDropbox } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
-import { MdOutlineLocalHospital } from "react-icons/md";
-import { IoAccessibilitySharp, IoBusiness  } from "react-icons/io5";
-import { MdAddBusiness } from "react-icons/md";
+import { FaCar, FaHome, FaHeart } from "react-icons/fa";
+import { MdOutlineLocalHospital, MdAddBusiness } from "react-icons/md";
+import { IoAccessibilitySharp, IoBusiness } from "react-icons/io5";
 import { GiFactory } from "react-icons/gi";
+import { HiOutlineScale } from "react-icons/hi";
 
+export const categorias = ["Personas", "Vehículo y hogar", "Empresas"];
+
+// Descripciones generales del tipo de seguro. No describen una póliza concreta:
+// coberturas, exclusiones, sumas y condiciones dependen de cada compañía y contrato.
 const secures = [
   {
-    icon: <FaCar />
-    ,
-    heading: "Automovil",
+    icon: <FaCar />,
+    heading: "Automóvil",
+    categoria: "Vehículo y hogar",
     detail:
-      "Cubre daños a terceros en caso de accidentes de tránsito, así como también ofrece cobertura para daños propios del vehículo asegurado.",
-  },
-  {
-    icon: <FaHeart />,
-    heading: "Vida",
-    detail:
-      "Ofrece protección financiera a los beneficiarios designados en caso de fallecimiento del asegurado. Puede incluir también cobertura por invalidez total o parcial.",
+      "Desde la responsabilidad civil obligatoria hacia terceros hasta coberturas más amplias que pueden incluir daños al propio vehículo, según el plan elegido.",
   },
   {
     icon: <FaHome />,
     heading: "Hogar",
+    categoria: "Vehículo y hogar",
     detail:
-      "Protege la vivienda y los bienes personales contra eventos como incendios, robos, daños por agua, entre otros.",
+      "Protección para la vivienda y su contenido frente a riesgos como incendio, robo o daños por agua, de acuerdo con lo que contemple cada póliza.",
   },
   {
-    icon: <MdOutlineLocalHospital />,
-    heading: "Salud",
+    icon: <FaHeart />,
+    heading: "Vida",
+    categoria: "Personas",
     detail:
-      "Proporciona cobertura médica y hospitalaria en caso de enfermedad o accidente, incluyendo consultas médicas, medicamentos, internaciones, entre otros servicios.",
-  },
-  {
-    icon: <FaDropbox />,
-    heading: "Responsabilidad civil",
-    detail:
-      "Cubre los daños materiales y personales que el asegurado pueda causar a terceros involucrados en un accidente.",
+      "Prestación económica para los beneficiarios que designes en caso de fallecimiento. Algunos planes incluyen coberturas adicionales, como invalidez.",
   },
   {
     icon: <IoAccessibilitySharp />,
     heading: "Accidentes personales",
+    categoria: "Personas",
     detail:
-      "Ofrece cobertura en caso de accidentes que resulten en lesiones corporales, incapacidad temporal o permanente, e incluso fallecimiento.",
+      "Cobertura ante accidentes que provoquen lesiones, incapacidad o fallecimiento, con los alcances y sumas que fije cada contrato.",
+  },
+  {
+    icon: <MdOutlineLocalHospital />,
+    heading: "Salud",
+    categoria: "Personas",
+    detail:
+      "Seguros vinculados a gastos o prestaciones médicas ante enfermedad o accidente. Las prestaciones incluidas varían según el producto.",
+  },
+  {
+    icon: <HiOutlineScale />,
+    heading: "Responsabilidad civil",
+    categoria: "Empresas",
+    detail:
+      "Cubre reclamos de terceros por daños materiales o personales que puedas causar en tu actividad, dentro de los límites de la póliza.",
   },
   {
     icon: <MdAddBusiness />,
     heading: "ART",
+    categoria: "Empresas",
     detail:
-      "Ofrece cobertura a empleadores y empleados contra riesgos laborales. Incluye asistencia médica, compensación por incapacidades y pensiones por fallecimiento en caso de accidentes laborales.",
+      "Aseguradora de Riesgos del Trabajo para empleadores: prevención y prestaciones ante accidentes laborales y enfermedades profesionales, según la normativa vigente.",
   },
   {
-    icon: <IoBusiness/>,
-    heading: "Integral de Comercio",
+    icon: <IoBusiness />,
+    heading: "Integral de comercio",
+    categoria: "Empresas",
     detail:
-      "Ofrece una protección integral para negocios, cubriendo riesgos como incendios, robos, daños por agua y responsabilidad civil.",
+      "Agrupa en una póliza riesgos habituales de un local comercial, como incendio, robo, daños por agua y responsabilidad civil.",
   },
   {
-    icon: <GiFactory/>,
-    heading: "Integral de Industria",
+    icon: <GiFactory />,
+    heading: "Integral de industria",
+    categoria: "Empresas",
     detail:
-      "Proporciona una protección completa para empresas manufactureras y de producción, abarcando riesgos como incendios, daños maquinaria, responsabilidad civil y pérdidas por interrupción de negocio.",
+      "Para establecimientos productivos: puede combinar incendio, daños a maquinaria, responsabilidad civil y pérdida de beneficios, según el plan.",
   },
 ];
+
 export default secures;

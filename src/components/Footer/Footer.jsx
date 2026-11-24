@@ -1,43 +1,57 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import { site, ssn } from "../../utils/site";
+import Pendiente from "../../utils/Pendiente";
 import "./Footer.css";
-const Footer = () => {
-  return (
-    <div className="f-wrapper">
-      <div className="paddings innerWidth flexCenter f-container">
-        {/* left side */}
-        <div className="flexColStart f-left">
-          <img src="./footer.png" alt="" width={150} />
-          <span className="secondaryText">
-          Servicio de Atención al Asegurado: Resolución 225/22
-        <br />
-        La entidad aseguradora dispone de un Servicio de Atención al Asegurado que atenderá las consultas y reclamos que presenten los tomadores de seguros, asegurados, beneficiarios y/o derechohabientes. 
-          </span>
-        </div>
-        <div className="flexColStart f-right">
-          <span className="primaryText">Informacion</span>
-          <span className="secondaryText">Enfermera Clermont 170 - CP 5003 - Córdoba</span>
-          <div className="flexCenter f-menu">
-            <span>El Servicio de Atención al Asegurado está integrado por:
-            <br />
-            RESPONSABLE: Manuel, Vincen – Tel.: 3516066258 –  info@asegurarnet.com.ar
-            <br />
-            SUPLENTE: Gustavo, Vincent – Tel.: 3515214529 –  info@asegurarnet.com.ar      
-            <br />
-            {/* En caso de que existiera un reclamo ante la entidad aseguradora y que el mismo no haya sido resuelto o haya sido desestimado, total o parcialmente, o que haya sido denegada su admisión, podrá comunicarse con la Superintendencia de Seguros de la Nación por teléfono al 0800-666-8400, correo electrónico a consultas@ssn.gob.ar o formulario disponible en la página argentina.gob.ar/ssn */}
-            </span>
-            <a href="https://www.argentina.gob.ar/superintendencia-de-seguros">
-            <img src="./superintendencia.png" alt="" width={250} className="img.derecha"/>
-            </a>
-          </div>
-        </div>
+
+const Footer = () => (
+  <footer className="f-wrapper">
+    <div className="contenedor f-grid">
+      <div className="f-marca">
+        <img src="/footer.png" alt={`${site.marca}, ${site.descriptor}`} width="150" height="87" />
+        <p>
+          <Pendiente valor={site.titular}>Nombre del productor o sociedad responsable</Pendiente>
+          <br />
+          {site.direccion}
+        </p>
+      </div>
+
+      <nav aria-label="Pie de página">
+        <h2 className="f-titulo">Sitio</h2>
+        <ul>
+          <li><Link to="/seguros">Seguros</Link></li>
+          <li><Link to="/siniestro">Siniestros</Link></li>
+          <li><Link to="/#contacto">Contacto</Link></li>
+          <li><Link to="/legales">Información legal y privacidad</Link></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 className="f-titulo">Contacto</h2>
+        <ul>
+          <li><a href={site.telefono.href}>Tel. {site.telefono.mostrar}</a></li>
+          <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+          <li><a href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+        </ul>
       </div>
     </div>
-  );
-};
+
+    {/* Banda obligatoria para productores asesores en web (Res. SSN 225/2022 y 279/2022, Manual MACOP) */}
+    <div className="f-ssn">
+      <div className="contenedor f-ssn-grid">
+        <p>
+          N° de matrícula SSN
+          <strong><Pendiente valor={site.matriculaSSN}>N.º de matrícula</Pendiente></strong>
+        </p>
+        <p>Departamento de Orientación<br />y Asistencia al Asegurado</p>
+        <p><a href={`tel:${ssn.telefono.replaceAll("-", "")}`}><strong>{ssn.telefono}</strong></a></p>
+        <p><a href={ssn.web} target="_blank" rel="noopener noreferrer"><strong>{ssn.webTexto}</strong></a></p>
+      </div>
+    </div>
+
+    <div className="contenedor f-legal">
+      <p>© {new Date().getFullYear()} {site.marca}. La información de este sitio es orientativa y no reemplaza las condiciones de cada póliza.</p>
+    </div>
+  </footer>
+);
 
 export default Footer;
-
- //El Servicio de Atención al Asegurado está integrado por:
-// RESPONSABLE: Calle, Graciela – Tel.: 03493-428500 – Int.: 53070 – SAA@sancorseguros.com
-// SUPLENTE: Barolo, Mariela – Tel.: 03493-428500 – Int.: 53120 – SAA@sancorseguros.com
-// En caso de que existiera un reclamo ante la entidad aseguradora y que el mismo no haya sido resuelto o haya sido desestimado, total o parcialmente, o que haya sido denegada su admisión, podrá comunicarse con la Superintendencia de Seguros de la Nación por teléfono al 0800-666-8400, correo electrónico a consultas@ssn.gob.ar o formulario disponible en la página argentina.gob.ar/ssn

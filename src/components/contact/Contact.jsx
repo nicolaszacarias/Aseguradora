@@ -1,108 +1,80 @@
-import React from "react";
+import { useState } from "react";
+import { MdCall, MdOutlineEmail, MdOutlinePlace } from "react-icons/md";
+import { FaWhatsapp } from "react-icons/fa";
+import { site } from "../../utils/site";
+import Pendiente from "../../utils/Pendiente";
 import "./Contact.css";
-import { MdCall } from "react-icons/md";
-import { BsFillChatDotsFill } from "react-icons/bs";
-import {HiChatBubbleBottomCenter} from 'react-icons/hi2'
+
+const MAPA_EMBED =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.6316333632023!2d-64.18338982481083!3d-31.419073296657636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a285bc3a9287%3A0xdd82d6b33c6e3db1!2sEnfermera%20Clermont%20170%2C%20X5000IUC%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1717090063096!5m2!1ses!2sar";
+
+const canales = [
+  { icon: <FaWhatsapp />, titulo: "WhatsApp", dato: site.whatsapp.mostrar, href: site.whatsapp.href, accion: "Abrir chat", externo: true },
+  { icon: <MdCall />, titulo: "Teléfono", dato: site.telefono.mostrar, href: site.telefono.href, accion: "Llamar" },
+  { icon: <MdOutlineEmail />, titulo: "Email", dato: site.email, href: `mailto:${site.email}`, accion: "Escribir" },
+];
+
 const Contact = () => {
+  // El mapa de Google se carga solo si la persona lo pide (privacidad y rendimiento).
+  const [verMapa, setVerMapa] = useState(false);
+
   return (
-    <div id="contact-us" className="c-wrapper">
-      <div className="paddings innerWidth flexCenter c-container">
-        {/* left side */}
-        <div className="flexColStart c-left">
-          <span className="orangeText">Nuestro Contacto</span>
-          <span className="primaryText">Al alcance de tu mano</span>
-          <span className="secondaryText">
-          Siempre estamos preparados para proporcionarte nuestro mejor servicio. 
-          Creemos que al brindar seguridad a las personas, se vive mejor.{" "}
-          </span>
+    <section id="contacto" className="seccion" aria-labelledby="ct-titulo">
+      <div className="contenedor ct-grid">
+        <div>
+          <h2 id="ct-titulo">Hablemos</h2>
+          <p className="intro">Elegí el canal que te quede más cómodo. Si preferís, vení a la oficina.</p>
+          <p className="ct-horario">
+            Horario de atención: <Pendiente valor={site.horario}>horario a confirmar</Pendiente>
+          </p>
 
-          <div className="flexColStart contactModes">
-            {/* first row */}
-            <div className="flexStart row">
-              <div className="flexColCenter mode">
-                  <div className="flexStart">
-                   <div className="flexCenter icon">
-                    <MdCall size={25} />
-                  </div> 
-                   <div className="flexColStart detail">
-                     <span className="primaryText">Llamar</span>
-                    <span className="secondaryText">+54 9 351 864-7777</span> 
-                  </div> 
-                </div> 
-                <a href="tel:+543515214529" className="modex">
-                 <div className="flexCenter button">Llamar ahora</div> 
-                 </a>
-              </div> 
-
-              <div className="flexColCenter mode">
-                <div className="flexStart">
-                  <div className="flexCenter icon">
-                    <BsFillChatDotsFill size={25} />
-                  </div>
-                  <div className="flexColStart detail">
-                    <span className="primaryText">Whatsapp</span>
-                    <span className="secondaryText">+54 9 351 864-7777</span>
-                  </div>
-                </div>
-                {/* <button>RECORDATORIO BOTON WHATSAPP</button> */}
-                <a href="https://wa.link/ofe549">
-                <div className="flexCenter button">Chat now</div>
+          <ul className="ct-canales">
+            {canales.map((c) => (
+              <li key={c.titulo}>
+                <a
+                  className="ct-canal"
+                  href={c.href}
+                  {...(c.externo ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                >
+                  <span className="ct-icono" aria-hidden>{c.icon}</span>
+                  <span className="ct-texto">
+                    <span className="ct-titulo">{c.titulo}</span>
+                    <span className="ct-dato">{c.dato}</span>
+                  </span>
+                  <span className="ct-accion" aria-hidden>{c.accion}</span>
                 </a>
-              </div>
-            </div>
-
-            {/* second row */}
-            <div className="flexStart row">
-              {/* <div className="flexColCenter mode">
-                <div className="flexStart">
-                  <div className="flexCenter icon">
-                    <BsFillChatDotsFill size={25} />
-                  </div>
-                  <div className="flexColStart detail">
-                    <span className="primaryText">Video Call</span>
-                    <span className="secondaryText">021 123 145 14</span>
-                  </div>
-                </div>
-                <div className="flexCenter button">Video Call now</div>
-              </div> */}
-
-              <div className="flexColCenter mode">
-                <div className="flexStart">
-                  <div className="flexCenter icon">
-                    <HiChatBubbleBottomCenter size={25} />
-                  </div>
-                  <div className="flexColStart detail">
-                    <span className="primaryText">Email</span>
-                    <span className="secondaryText">info@asegurarnet.com.ar</span>
-                  </div>
-                </div>
-                <a href="mailto:info@asegurarnet.com.ar">
-                <div className="flexCenter button">Message now</div>
-                </a>
-              </div>
-            </div>
-          </div>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* right side */}
-        <div className="flexEnd c-right">
-                <div className="map-container" style={{ width: '100%', height: '400px', borderRadius: '12px', overflow: 'hidden' }}>
-  <h3 className="primaryText" style={{ marginBottom: '1rem' }}>Estamos ubicados en:</h3>
-
-  <iframe
-    title="Ubicación Asegurarnet"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.6316333632023!2d-64.18338982481083!3d-31.419073296657636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a285bc3a9287%3A0xdd82d6b33c6e3db1!2sEnfermera%20Clermont%20170%2C%20X5000IUC%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1717090063096!5m2!1ses!2sar"
-    width="100%"
-    height="100%"
-    style={{ border: 0 }}
-    allowFullScreen=""
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-  ></iframe>
-</div>
+        <div className="ct-mapa">
+          {verMapa ? (
+            <iframe
+              title={`Mapa: ${site.direccion}`}
+              src={MAPA_EMBED}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          ) : (
+            <div className="ct-mapa-placeholder">
+              <MdOutlinePlace aria-hidden size={40} />
+              <p className="ct-direccion">{site.direccion}</p>
+              <div className="ct-mapa-botones">
+                <button type="button" className="btn btn--primario" onClick={() => setVerMapa(true)}>
+                  Ver mapa
+                </button>
+                <a className="btn btn--borde" href={site.mapsUrl} target="_blank" rel="noopener noreferrer">
+                  Cómo llegar
+                </a>
+              </div>
+              <p className="ct-mapa-nota">El mapa lo provee Google Maps y se carga solo si lo pedís.</p>
+            </div>
+          )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
